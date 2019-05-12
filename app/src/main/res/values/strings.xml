@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">HttpRequests</string>
+
+    <string name="database_cleared">All data has been removed from the database.</string>
+    <string name="url_text_view">URL:</string>
+    <string name="delete_url_button">Delete URL</string>
+    <string name="update_url_button">Update URL</string>
+    <string name="add_url_button">Add URL</string>
+    <string name="data_text_view">Data:</string>
+    <string name="delete_data_button">Delete</string>
+    <string name="method_text_view">Method:</string>
+    <string name="execute_method_button">Execute</string>
+    <string name="clear_database_button">Clear Database</string>
+    <string name="url_prefix">http://</string>
+    <string name="add_data_button">Add Data</string>
+
+    <string-array name="methods_array">
+        <item>GET String</item>
+        <item>GET JSON</item>
+        <item>POST JSON</item>
+        <item>UPDATE JSON</item>
+        <item>DELETE JSON</item>
+    </string-array>
+
+</resources>
