@@ -256,15 +256,19 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
         setCurrentMethod(methodsArray[0]);
     }
 
+    // Set the data for a given URL.
     private void setData(URL url) {
         setCurrentURL(url);
         final URL finalURL = url;
 
+        // Outer LinearLayout.
         LinearLayout linearLayout = findViewById(R.id.dataLinearLayout);
         linearLayout.removeAllViews();
 
         for(int i = 0; i < url.getData().size(); i++) {
            final Data datum = url.getData().get(i);
+
+           // Add a button to delete each datum.
            Button button = new Button(this);
            button.setText(getResources().getString(R.string.delete_data_button));
            button.setOnClickListener(new View.OnClickListener() {
@@ -278,6 +282,8 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
                }
            });
 
+           // Horizontal LinearLayout to hold each datum's TextView for its key, EditText for its
+           // value, and its delete button.
            LinearLayout innerLinearLayout = new LinearLayout(this);
            innerLinearLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
            innerLinearLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -288,7 +294,6 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
            innerLinearLayout.addView(dataTextView);
 
            EditText dataEditText = new EditText(this);
-           //dataEditText.setId(datum.getId());
            dataEditText.addTextChangedListener(new TextWatcher() {
                @Override
                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -309,6 +314,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
 
            linearLayout.addView(innerLinearLayout);
         }
+        // Tack the add data button on at the end.
         linearLayout.addView(addDataButton);
     }
 
@@ -472,6 +478,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
         requestQueue.add(request);
     }
 
+    // Currently have no need to implement update.
     private void updateJSON() {
         final TextView responseTextView = findViewById(R.id.responseTextView);
         final URL url = getCurrentURL();
@@ -486,6 +493,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
 
     }
 
+    // Currently have no need to implement delete.
     private void deleteJSON() {
         final TextView responseTextView = findViewById(R.id.responseTextView);
         responseTextView.setText("Delete JSON");

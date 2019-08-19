@@ -16,10 +16,12 @@
 
     <string-array name="methods_array">
         <item>GET String</item>
-        <item>GET JSON</item>
         <item>POST JSON</item>
+        <!--
+        <item>GET JSON</item>
         <item>UPDATE JSON</item>
         <item>DELETE JSON</item>
+        -->
     </string-array>
 
 </resources>
